@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <link rel="stylesheet" href="src/index.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@^0.7.0",
+          "marked":      "https://esm.sh/marked@^15.0.7"
+        }
+      }
+    </script>
+  </head>
+  
+  <body>
+    <div class="container">
+      <button id="toggle-theme">🌓 Toggle Theme</button>
+      <h1>GIẢI THÍCH MỌI THỨ VỚI NHỮNG CHÚ MÈO CON </h1>
+      <ul id="examples">
+        <li>Bạn là ai thế</li>
+        <li>Cậu hoạt động như thế nào</li>
+        <li>Cậu được thiết kế bởi ai</li>
+      </ul>
+      <textarea id="input" placeholder="Nhập ở đây :> 🐾"></textarea>
+      <div id="output"></div>
+      <div id="error" hidden></div>
+      <div id="slideshow" hidden></div>
+    </div>
+
+    <!-- 1) THIS pulls in your main.ts (where you `import './style.css'` and run your app) -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+  <script>
+    const toggleBtn = document.getElementById('toggle-theme');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('pink');
+      localStorage.setItem('theme', document.body.classList.contains('pink') ? 'pink' : 'white');
+    });
+  
+    window.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'pink') {
+        document.body.classList.add('pink');
+      }
+    });
+  </script>
+</html>
