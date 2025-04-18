@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MeowBot 🐱</title>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <button id="toggle-theme">🌓 Giao diện</button>
+        <h1>🐾 GIẢI THÍCH MỌI THỨ VỚI NHỮNG CHÚ MÈO CON 🐱</h1>
+      </div>
+
+      <div class="chat-container">
+        <div class="sidebar">
+          <ul id="examples">
+            <li>Bạn là ai thế?</li>
+            <li>Cậu hoạt động như thế nào?</li>
+            <li>Cậu được thiết kế bởi ai?</li>
+          </ul>
+          <chat-history></chat-history>
+        </div>
+
+        <div class="main-content">
+          <div id="loading" class="loading" hidden>
+            <div class="loading-dots">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="loading-text">Đang suy nghĩ...</div>
+          </div>
+
+          <div id="slideshow"></div>
+          <div id="output"></div>
+          <div id="response"></div>
+          <div id="error" hidden></div>
+          
+          <div class="input-container">
+            <textarea id="input" placeholder="Nhập câu hỏi ở đây nè ~ :3 🐾"></textarea>
+            <button id="send-btn">😺 Meow!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
