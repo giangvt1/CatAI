@@ -316,7 +316,7 @@ function updateConversationsList() {
 
 // Load creator metadata
 async function loadCreatorInfo(): Promise<CreatorInfo> {
-  const res = await fetch('/creator.json');
+  const res = await fetch('./creator.json');
   return await res.json();
 }
 
@@ -392,7 +392,7 @@ async function generate(message: string) {
     loadingSlide.className = 'loading-slide';
     loadingSlide.innerHTML = `
       <div class="loading-cat">
-        <img src="/loading-cat.svg" alt="Loading..." />
+        <img src="./loading-cat.svg" alt="Loading..." />
       </div>
       <p>${lang === 'en' ? 'Thinking...' : 'Đang suy nghĩ...'}</p>
     `;
@@ -448,7 +448,7 @@ async function generate(message: string) {
     const errorCat = document.createElement('div');
     errorCat.className = 'error-cat';
     errorCat.innerHTML = `
-      <img src="/sad-cat.svg" alt="Error" />
+      <img src="./sad-cat.svg" alt="Error" />
       <p>${errorMessage}</p>
     `;
     slideshow.appendChild(errorCat);

@@ -9,16 +9,8 @@ If the user prompt is in Vietnamese, respond in Vietnamese; if in English, respo
 Keep going until you're done.
 `;
 
-interface CreatorMap {
+type CreatorMap = {
   [key in Lang]: string;
-}
-
-interface PromptParts {
-  message: string;
-  creator: CreatorMap;
-  purpose: CreatorMap;
-  about: CreatorMap;
-  lang: Lang;
 }
 
 /**
