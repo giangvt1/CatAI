@@ -2,26 +2,50 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" href="/cat-icon.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MeowBot 🐱</title>
     <link rel="stylesheet" href="/src/styles/index.css" />
+    <meta name="description" content="Giải thích mọi thứ với những chú mèo con - Explain everything with tiny cats" />
+    <meta name="theme-color" content="#ff69b4" />
   </head>
 
   <body>
     <div class="container">
       <div class="header">
-        <button id="toggle-theme">🌓 Giao diện</button>
         <h1>🐾 GIẢI THÍCH MỌI THỨ VỚI NHỮNG CHÚ MÈO CON 🐱</h1>
+        <div class="subtitle">Explain Everything with Tiny Cats</div>
       </div>
 
       <div class="chat-container">
         <div class="sidebar">
-          <ul id="examples">
-            <li>Bạn là ai thế?</li>
-            <li>Cậu hoạt động như thế nào?</li>
-            <li>Cậu được thiết kế bởi ai?</li>
-          </ul>
+          <div class="controls-container">
+            <!-- Theme and personality selectors will be added here by JS -->
+          </div>
+          
+          <div class="examples-container">
+            <h3>Gợi ý</h3>
+            <ul id="examples">
+              <li>Bạn là ai thế?</li>
+              <li>Cậu hoạt động như thế nào?</li>
+              <li>Cậu được thiết kế bởi ai?</li>
+              <li>Giải thích cách AI hoạt động</li>
+              <li>Kể về vũ trụ</li>
+            </ul>
+          </div>
+          
+          <div class="conversations-container">
+            <div class="conversations-header">
+              <h3>Hội thoại</h3>
+              <button id="new-conversation" class="icon-button">➕</button>
+              <button id="export-conversations" class="icon-button">💾</button>
+              <button id="import-conversations" class="icon-button">📂</button>
+            </div>
+            <div class="conversations-list">
+              <!-- Conversations will be added here by JS -->
+            </div>
+          </div>
+          
           <chat-history></chat-history>
         </div>
 
@@ -35,17 +59,31 @@
             <div class="loading-text">Đang suy nghĩ...</div>
           </div>
 
-          <div id="slideshow"></div>
+          <div id="slideshow" class="slideshow-container"></div>
           <div id="output"></div>
           <div id="response"></div>
           <div id="error" hidden></div>
           
           <div class="input-container">
-            <textarea id="input" placeholder="Nhập câu hỏi ở đây nè ~ :3 🐾"></textarea>
-            <button id="send-btn">😺 Meow!</button>
+            <textarea id="input" placeholder="Nhập câu hỏi ở đây nè ~ :3 🐾" aria-label="Your question"></textarea>
+            <div class="input-actions">
+              <button id="clear-btn" class="secondary-button" title="Clear conversation">🧹</button>
+              <button id="send-btn" class="primary-button">😺 Meow!</button>
+            </div>
           </div>
         </div>
       </div>
+      
+      <footer class="footer">
+        <div class="footer-content">
+          <p>© 2025 MeowBot - Made with 💖 by Giang</p>
+          <div class="footer-links">
+            <a href="https://github.com/giangvt1/CatAI" target="_blank" rel="noopener">GitHub</a>
+            <span class="separator">|</span>
+            <a href="#" id="about-link">About</a>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <script type="module" src="/src/main.ts"></script>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .cat-body {
+      fill: #FFE4EC;
+    }
+    .cat-ear {
+      fill: #FF69B4;
+    }
+    .cat-face {
+      fill: white;
+    }
+    .cat-eye {
+      fill: #333333;
+    }
+    .cat-eye-shine {
+      fill: white;
+    }
+    .cat-nose {
+      fill: #FF69B4;
+    }
+    
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+    
+    @keyframes blink {
+      0%, 10%, 25%, 100% {
+        transform: scaleY(1);
+      }
+      15%, 20% {
+        transform: scaleY(0.1);
+      }
+    }
+    
+    @keyframes tail-wag {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(10deg);
+      }
+      75% {
+        transform: rotate(-10deg);
+      }
+    }
+    
+    .cat {
+      animation: bounce 1s ease-in-out infinite;
+      transform-origin: center;
+    }
+    
+    .cat-eye-group {
+      animation: blink 4s ease-in-out infinite;
+      transform-origin: center;
+    }
+    
+    .cat-tail {
+      animation: tail-wag 0.8s ease-in-out infinite;
+      transform-origin: 136px 297px;
+    }
+    
+    .loading-dot {
+      opacity: 0;
+      fill: #FF69B4;
+      animation: fade 1.5s ease-in-out infinite;
+    }
+    
+    .loading-dot:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+    
+    .loading-dot:nth-child(3) {
+      animation-delay: 1s;
+    }
+    
+    @keyframes fade {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
+  
+  <g class="cat">
+    <!-- Cat body -->
+    <circle class="cat-body" cx="256" cy="256" r="120"/>
+    
+    <!-- Cat ears -->
+    <path class="cat-ear" d="M339.5 206.5C339.5 206.5 354 177 369.5 177C385 177 400.5 191.5 400.5 206.5C400.5 221.5 385 236.5 369.5 236.5C354 236.5 339.5 221.5 339.5 206.5Z"/>
+    <path class="cat-ear" d="M172.5 206.5C172.5 206.5 158 177 142.5 177C127 177 111.5 191.5 111.5 206.5C111.5 221.5 127 236.5 142.5 236.5C158 236.5 172.5 221.5 172.5 206.5Z"/>
+    
+    <!-- Cat face -->
+    <circle class="cat-face" cx="256" cy="256" r="100"/>
+    
+    <!-- Cat eyes -->
+    <g class="cat-eye-group">
+      <circle class="cat-eye" cx="220" cy="230" r="15"/>
+      <circle class="cat-eye" cx="290" cy="230" r="15"/>
+      <circle class="cat-eye-shine" cx="225" cy="225" r="5"/>
+      <circle class="cat-eye-shine" cx="295" cy="225" r="5"/>
+    </g>
+    
+    <!-- Cat nose and mouth -->
+    <circle class="cat-nose" cx="256" cy="260" r="8"/>
+    <path d="M256 268C256 268 246 278 236 278M256 268C256 268 266 278 276 278" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Cat tail -->
+    <path class="cat-tail" d="M136 297C136 297 156 317 176 317C196 317 216 297 216 297" stroke="#FF69B4" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Loading dots -->
+  <circle class="loading-dot" cx="226" cy="350" r="10"/>
+  <circle class="loading-dot" cx="256" cy="350" r="10"/>
+  <circle class="loading-dot" cx="286" cy="350" r="10"/>
+</svg>
